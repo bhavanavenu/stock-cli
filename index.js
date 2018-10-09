@@ -23,8 +23,8 @@ axios
   .then(response => {
     const stockData = response.data.dataset.data;
 
-    console.log("Percent rate of return is : ", rateOfReturn(stockData));
     dailyValue(stockData);
+    rateOfReturn(stockData);
     //console.log(response.data.dataset.data);
   });
 

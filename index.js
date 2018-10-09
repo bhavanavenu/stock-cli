@@ -1,7 +1,7 @@
 var program = require("commander");
 const axios = require("axios");
 require("dotenv").config();
-var Quandl = require("quandl");
+const rateOfReturn = require("./rateOfReturn");
 
 program
   .version("0.1.0")
@@ -11,53 +11,35 @@ program
   .option("-e, --end <e>", "end date", String)
   .parse(process.argv);
 
-console.log(" stock is %j ", program.stock);
-console.log(" token is %j ", program.token);
-console.log(" start is %j ", program.start);
-console.log(" end is %j ", program.end);
+var stockName = program.stock;
+var startDate = program.start;
+var endDate = program.end;
+var api_key = program.token;
 
-// axios
-//   .get(
-//     "https://www.quandl.com/api/v3/datasets/WIKI/FB.json?column_index=4&start_date=2018-05-26&end_date=2018-05-27&api_key=xxxx"
-//   )
-//   .then(result => {
-//     return res.data;
-//       })
-//       .catch(errHandler);
+axios
+  .get(
+    `https://www.quandl.com/api/v3/datasets/WIKI/${stockName}.json?order=asc&start_date=${startDate}&end_date=${endDate}&api_key=${api_key}`
+  )
+  .then(response => {
+    const stockData = response.data.dataset.data;
 
-//   });
+    console.log("Percent rate of return is : ", rateOfReturn(stockData));
+    dailyValue(stockData);
+    //console.log(response.data.dataset.data);
+  });
 
-// axios
-//   .get(
-//     `https://www.quandl.com/api/v3/datasets/WIKI/fb.json?column_index=4&start_date=2018-03-22&end_date=2018-03-27&api_key=xxxx`
-//   )
-//   .then(response => {
-//     const stockData = response.data.dataset;
-
-//     console.log(stockData);
-//   });
-
-var quandl = new Quandl({
-  auth_token: program.token,
-  api_version: 3
-});
-
-quandl.dataset(
-  {
-    source: "WIKI",
-    table: program.stock
-  },
-  {
-    order: "asc",
-    exclude_column_names: true,
-    // Notice the YYYY-MM-DD format
-    start_date: program.start,
-    end_date: program.end,
-    column_index: 4
-  },
-  function(err, response) {
-    if (err) throw err;
-
-    console.log(response);
+function dailyValue(data) {
+  for (i = 0; i < data.length; i++) {
+    console.log(
+      data[i][0] +
+        ":" +
+        " closed Price " +
+        data[i][4] +
+        " [Low value at " +
+        data[i][3] +
+        ", High value at " +
+        data[i][2] +
+        "]"
+    );
   }
-);
+}

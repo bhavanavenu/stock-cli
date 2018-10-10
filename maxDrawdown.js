@@ -9,20 +9,6 @@ function maxDrawdown(data) {
     max.push([drawdown, date, high, low]);
   }
 
-  //console.log(max);
-
-  //   console.log(
-  //     "MAX DRAWDOWN IS :" +
-  //       maxVal(max) +
-  //       "%" +
-  //       " date :" +
-  //       max[dayOfDate][1] +
-  //       " high " +
-  //       max[dayOfDate][2] +
-  //       " low " +
-  //       max[dayOfDate][3]
-  //   );
-
   console.log(
     "MAXIMUM DRAWDOWN IS : " +
       maxVal(max) +

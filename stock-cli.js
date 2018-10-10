@@ -5,7 +5,7 @@ const dailyValue = require("./dailyStockValue");
 
 const args = require("minimist")(process.argv.slice(2));
 
-if (args.h == true || args.help == true || args._ == "") {
+if (args.h === true || args.help === true || args._ == "") {
   helpText();
 }
 

@@ -9,6 +9,18 @@ function maxDrawdown(data) {
     max.push([drawdown, date, high, low]);
   }
 
+  function maxVal(array) {
+    let m = array[0][0];
+
+    for (let i = 1; i < array.length; i++) {
+      if (array[i][0] > m) {
+        m = array[i][0];
+        dayOfDate = i;
+      }
+    }
+    return m;
+  }
+
   console.log(
     "MAXIMUM DRAWDOWN IS : " +
       maxVal(max) +
@@ -25,20 +37,6 @@ function maxDrawdown(data) {
       max[dayOfDate][1] +
       " ] "
   );
-
-  function maxVal(array) {
-    let m = array[0][0];
-
-    for (let i = 1; i < array.length; i++) {
-      if (array[i][0] > m) {
-        m = array[i][0];
-        dayOfDate = i;
-      }
-
-      return m;
-    }
-    return;
-  }
 }
 
 module.exports = maxDrawdown;

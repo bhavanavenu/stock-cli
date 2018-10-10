@@ -16,20 +16,16 @@ function rateOfReturn(data) {
       "(" +
       percentRor +
       " %)" +
-      " " +
-      "Start Price of " +
-      "[" +
+      " [ Start value of " +
       startPrice +
-      "]" +
       " on " +
       startDate +
-      "---->" +
-      "End Price of " +
-      "[" +
+      "-->" +
+      "End value of " +
       endPrice +
-      "]" +
       " on " +
-      endDate
+      endDate +
+      " ] "
   );
   return;
 }

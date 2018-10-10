@@ -1,7 +1,8 @@
 var program = require("commander");
 const axios = require("axios");
-require("dotenv").config();
 const rateOfReturn = require("./rateOfReturn");
+const maxDrawdown = require("./maxDrawdown");
+const dailyValue = require("./dailyStockValue");
 
 program
   .version("0.1.0")
@@ -14,32 +15,21 @@ program
 var stockName = program.stock;
 var startDate = program.start;
 var endDate = program.end;
-var api_key = program.token;
+var apiKey = program.token;
 
 axios
   .get(
-    `https://www.quandl.com/api/v3/datasets/WIKI/${stockName}.json?order=asc&start_date=${startDate}&end_date=${endDate}&api_key=${api_key}`
+    `https://www.quandl.com/api/v3/datasets/WIKI/${stockName}.json?order=asc&start_date=${startDate}&end_date=${endDate}&api_key=${apiKey}`
   )
   .then(response => {
     const stockData = response.data.dataset.data;
 
+    console.log("\n");
     dailyValue(stockData);
+    console.log("\n");
+    maxDrawdown(stockData);
+    console.log("\n");
     rateOfReturn(stockData);
+    console.log("\n");
     //console.log(response.data.dataset.data);
   });
-
-function dailyValue(data) {
-  for (i = 0; i < data.length; i++) {
-    console.log(
-      data[i][0] +
-        ":" +
-        " closed Price " +
-        data[i][4] +
-        " [Low value at " +
-        data[i][3] +
-        ", High value at " +
-        data[i][2] +
-        "]"
-    );
-  }
-}

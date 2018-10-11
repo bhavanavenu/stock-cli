@@ -49,15 +49,15 @@ Welcome to Stock CLI
 
 
  Format of usage of this cli
- stock-cli <quandl-api-token> <stockname(APPL)> <startdate(yyyy-mm-dd)> <enddate(yyyy-mm-dd)>
+ stock-cli <quandl-api-token> <stockname(AAPL)> <startdate(yyyy-mm-dd)> <enddate(yyyy-mm-dd)>
 
 
  Example :
- stock-cli xxxx APPL 2018-03-22 2018-03-27
+ stock-cli xxxx AAPL 2018-03-22 2018-03-27
 
 
  To send email of the result :
- stock-cli xxxx APPL 2018-03-22 2018-03-27 sendToEmail@domain.com yourEmail@domain.com
+ stock-cli xxxx AAPL 2018-03-22 2018-03-27 sendToEmail@domain.com yourEmail@domain.com
 ```
 
 ## Sample Output

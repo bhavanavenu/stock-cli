@@ -36,6 +36,8 @@ or you can just
 
 ## Usage
 
+You can run the command `stock-cli' from anywhere on your system.
+
 `stock-cli xxxapi-keyxxx AAPL 2018-03-22 2018-03-27`
 
 ```

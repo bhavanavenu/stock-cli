@@ -1,6 +1,7 @@
 function dailyValue(data) {
-  for (let i = 0; i < data.length; i++) {
-    console.log(
+  let dailyArray = [];
+  for (let i in data) {
+    dailyArray.push(
       data[i][0] +
         ":" +
         " closed at " +
@@ -12,6 +13,7 @@ function dailyValue(data) {
         " ]"
     );
   }
+  return dailyArray;
 }
 
 module.exports = dailyValue;

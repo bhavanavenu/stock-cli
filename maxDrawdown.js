@@ -1,6 +1,6 @@
 function maxDrawdown(data) {
   let max = [];
-  let dayOfDate = 0;
+  let day = 0;
   for (let i = 0; i < data.length; i++) {
     let date = data[i][0];
     let high = data[i][2];
@@ -12,30 +12,30 @@ function maxDrawdown(data) {
   function maxVal(array) {
     let m = array[0][0];
 
-    for (let i = 1; i < array.length; i++) {
+    for (let i in array) {
       if (array[i][0] > m) {
         m = array[i][0];
-        dayOfDate = i;
+        day = i;
       }
     }
     return m;
   }
 
-  console.log(
-    "MAXIMUM DRAWDOWN IS : " +
-      maxVal(max) +
-      "%" +
-      " [ " +
-      " High value of " +
-      max[dayOfDate][2] +
-      " on " +
-      max[dayOfDate][1] +
-      "," +
-      " Low value of " +
-      max[dayOfDate][3] +
-      " on " +
-      max[dayOfDate][1] +
-      " ] "
+  return (
+    "Maximum Drawdown : " +
+    maxVal(max) +
+    "%" +
+    " [ " +
+    " High value of " +
+    max[day][2] +
+    " on " +
+    max[day][1] +
+    "," +
+    " Low value of " +
+    max[day][3] +
+    " on " +
+    max[day][1] +
+    " ] "
   );
 }
 

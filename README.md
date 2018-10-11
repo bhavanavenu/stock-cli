@@ -4,7 +4,7 @@ A simple CLI to get stock data from Quandl data source and also to share the dat
 
 ## Features
 
-- To get Stock prices on the given date / during the time frame
+- To get stock prices on the given date / during the time frame
 - Return the stock has generated
 - Obtain Maximum drawdown
 - send the result to an email address
@@ -36,6 +36,8 @@ or you can just
 
 ## Usage
 
+`stock-cli xxxapi-keyxxx AAPL 2018-03-22 2018-03-27`
+
 ```
 Welcome to Stock CLI
 
@@ -45,15 +47,15 @@ Welcome to Stock CLI
 
 
  Format of usage of this cli
- node stock-cli.js <quandl-api-token> <stockname(APPL)> <startdate(yyyy-mm-dd)> <enddate(yyyy-mm-dd)>
+ stock-cli <quandl-api-token> <stockname(APPL)> <startdate(yyyy-mm-dd)> <enddate(yyyy-mm-dd)>
 
 
  Example :
- node stock-cli.js xxxx APPL 2018-03-22 2018-03-27
+ stock-cli xxxx APPL 2018-03-22 2018-03-27
 
 
  To send email of the result :
- node stock-cli.js xxxx APPL 2018-03-22 2018-03-27 sendToEmail@domain.com yourEmail@domain.com
+ stock-cli xxxx APPL 2018-03-22 2018-03-27 sendToEmail@domain.com yourEmail@domain.com
 ```
 
 ## Sample Output

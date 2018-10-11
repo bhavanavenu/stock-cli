@@ -12,6 +12,8 @@ if (args.h === true || args.help === true || args._ == "") {
   helpText();
 }
 
+//cli help-text
+
 function helpText() {
   console.log("\n");
   console.log(" Welcome to Stock CLI");
@@ -45,6 +47,8 @@ var fromEmail = args._[5];
 var stockData = null;
 var outputData = "<h1> Stock : " + stockName + "</h1>";
 
+// http GET stock data from quandl api
+
 if (args._ != "") {
   axios
     .get(
@@ -58,6 +62,8 @@ if (args._ != "") {
       }
     });
 }
+
+// cli OUTPUT ----takes in stripped out data from quandl api
 
 function output(stockData) {
   array = dailyValue(stockData);
@@ -76,6 +82,8 @@ function output(stockData) {
   outputData += "<br>" + "<p>" + rateOfReturn(stockData) + "</p>" + "</b>";
   console.log("\n");
 }
+
+// send email the stock data via cli
 
 function emailContent() {
   sendmail(

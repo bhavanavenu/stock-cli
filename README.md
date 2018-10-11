@@ -28,7 +28,7 @@ or you can just
 - [axios](https://www.npmjs.com/package/axios)
 - [sendmail](https://www.npmjs.com/package/sendmail)
 - [minimist](https://www.npmjs.com/package/minimist)
-- [quandl](ttps://www.quandl.com/data/WIKI​)
+- [quandl](https://www.quandl.com/data/WIKI​)
 
 ## Authors
 

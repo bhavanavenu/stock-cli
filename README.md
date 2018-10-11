@@ -1,8 +1,6 @@
 # stock-cli
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+A simple CLI to get stock data from Quandl data source and also to share the data to anyone via email.
 
 ## Features
 
@@ -13,7 +11,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Quandl API key. Get one from [here](https://www.quandl.com/data/WIKI​)
+- Quandl API key, get one from [here](https://www.quandl.com/data/WIKI​)
 
 ### Installing
 

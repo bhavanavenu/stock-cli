@@ -23,16 +23,16 @@ function helpText() {
   console.log("\n");
   console.log(" Format of usage of this cli");
   console.log(
-    " stock-cli <quandl-api-token> <stockname(APPL)> <startdate(yyyy-mm-dd)> <enddate(yyyy-mm-dd)>"
+    " stock-cli <quandl-api-token> <stockname(AAPL)> <startdate(yyyy-mm-dd)> <enddate(yyyy-mm-dd)>"
   );
   console.log("\n");
 
   console.log(" Example : ");
-  console.log(" stock-cli xxxx APPL 2018-03-22 2018-03-27");
+  console.log(" stock-cli xxxx AAPL 2018-03-22 2018-03-27");
   console.log("\n");
   console.log(" To send email of the result :");
   console.log(
-    " stock-cli xxxx APPL 2018-03-22 2018-03-27 sendToEmail@domain.com yourEmail@domain.com"
+    " stock-cli xxxx AAPL 2018-03-22 2018-03-27 sendToEmail@domain.com yourEmail@domain.com"
   );
 
   console.log("\n");

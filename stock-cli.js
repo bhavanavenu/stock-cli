@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const axios = require("axios");
 const rateOfReturn = require("./rateOfReturn");
 const maxDrawdown = require("./maxDrawdown");

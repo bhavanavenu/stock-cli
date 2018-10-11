@@ -2,7 +2,9 @@
   "name": "stock-cli",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "preferGlobal": true,
+  "bin": "./stock-cli.js",
+  "main": "stock-cli.js",
   "scripts": {
     "test": ""
   },
